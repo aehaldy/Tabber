@@ -1,6 +1,7 @@
 # tabber
 
-A new Flutter project.
+Keep tabs on it:
+A simple large-asset tracking app.
 
 ## Getting Started
 
