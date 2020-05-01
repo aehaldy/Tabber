@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "363938303988",
+    "firebase_url": "https://tabber-8c89b.firebaseio.com",
+    "project_id": "tabber-8c89b",
+    "storage_bucket": "tabber-8c89b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:363938303988:android:1c8a1518e84e525c2473a1",
+        "android_client_info": {
+          "package_name": "com.aehaldy.tabber"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "363938303988-59dj918d4vit5n8gopvpko9cvvh5jipn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPacL2Edag5XHOQNkOv09Ux95PThcpsGk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "363938303988-59dj918d4vit5n8gopvpko9cvvh5jipn.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "363938303988-p2hh84h8qc6aej8cqooipm5vcf8i2sfa.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.aehaldy.tabber"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
