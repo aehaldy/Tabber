@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tabber/screens/home/search/searchForm.dart';
 
 class Home extends StatelessWidget {
   @override
@@ -80,7 +81,10 @@ class Home extends StatelessWidget {
               ),
             ),
             onPressed: () {
-              print('Open search widget');
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => SearchForm()),
+              );
             },
           ),
           ),
