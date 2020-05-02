@@ -17,7 +17,6 @@ class _SignInState extends State<SignIn> {
       backgroundColor: Colors.grey[400],
       appBar: AppBar(
         backgroundColor: Colors.grey[200],
-        //backgroundColor: Colors.orange,
         elevation: 0.0,
         title: Text(
           'Log in to Tabber',
@@ -25,8 +24,6 @@ class _SignInState extends State<SignIn> {
               color: Colors.grey[600],
               fontSize: 28,
               fontFamily: 'Lato',
-              // fontStyle: FontStyle.italic,
-              // fontWeight: FontWeight.w700
             )
         ),
       ),
