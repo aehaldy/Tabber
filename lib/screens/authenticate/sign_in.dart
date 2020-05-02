@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tabber/services/auth.dart';
 
 class SignIn extends StatefulWidget {
   @override
@@ -6,6 +7,10 @@ class SignIn extends StatefulWidget {
 }
 
 class _SignInState extends State<SignIn> {
+
+  //instance of AuthService from services/auth.dart
+  final AuthService _auth = AuthService();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,6 +24,9 @@ class _SignInState extends State<SignIn> {
           style: TextStyle(
               color: Colors.grey[600],
               fontSize: 28,
+              fontFamily: 'Lato',
+              // fontStyle: FontStyle.italic,
+              // fontWeight: FontWeight.w700
             )
         ),
       ),
@@ -33,10 +41,17 @@ class _SignInState extends State<SignIn> {
             style: TextStyle(
               color: Colors.grey[50],
               fontSize: 20,
+              fontFamily: 'OpenSans',
+              fontWeight: FontWeight.w600
             ),
           ),
           onPressed: () async {
-
+            dynamic result = await _auth.signInAnon();
+            if (result == null) {
+              print('User login failed');
+            } else {
+              print('Signed in\n $result');
+            }
           },
         )
       ),
