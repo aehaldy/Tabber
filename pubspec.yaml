@@ -34,6 +34,8 @@ dependencies:
   location: ^3.0.0
   # Map launcher
   map_launcher: ^0.4.5
+  # Provider
+  provider: ^4.0.5+1
 
 
 dev_dependencies:
