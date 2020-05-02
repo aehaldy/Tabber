@@ -50,7 +50,7 @@ class _SignInState extends State<SignIn> {
             if (result == null) {
               print('User login failed');
             } else {
-              print('Signed in\n $result');
+              print('Signed in User ${result.uid}');
             }
           },
         )
