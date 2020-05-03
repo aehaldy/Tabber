@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 
 class SearchForm extends StatefulWidget {
 
-  final Function toggleSeeking;
   final Function searchForAsset;
-  SearchForm({ this.toggleSeeking, this.searchForAsset });
+  SearchForm({ this.searchForAsset });
 
   @override
   _SearchFormState createState() => _SearchFormState();
@@ -87,9 +86,7 @@ class _SearchFormState extends State<SearchForm> {
               ),
               onPressed: () async {
                 if (_formKey.currentState.validate()) {
-                  print('~~~~~Got VID: $vid~~~~~');
                   widget.searchForAsset(vid);
-                  widget.toggleSeeking();
                 }
               },
             ),
