@@ -25,11 +25,10 @@ class _ViewHandlerState extends State<ViewHandler> {
       dynamic data = await _db.getAsset(vid);
       if (data == null) {
         //toast note that it's NOT FOUND
-        print('Data returned null, toggling back to SEARCH!');
-        toggleSeeking();
+        print('ASSET SEARCH RETURNED NULL!');
       } else {
-        //probably need to groom the data!
         setState(() => asset = data);
+        toggleSeeking();
       }
     }
     setAssetState(asset);
@@ -37,10 +36,10 @@ class _ViewHandlerState extends State<ViewHandler> {
 
   @override
   Widget build(BuildContext context) {
-    if (_seekingAsset && asset != null){
-      return Directions( toggleSeeking: toggleSeeking, asset: asset);
+    if (_seekingAsset){
+      return Directions(toggleSeeking: toggleSeeking, asset: asset);
     } else {
-      return SearchForm(toggleSeeking: toggleSeeking, searchForAsset: searchForAsset);
+      return SearchForm(searchForAsset: searchForAsset);
     }
   }
 }

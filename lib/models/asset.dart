@@ -5,8 +5,8 @@ class Asset {
   final String vid;
   final String barcode;
   final String scannedBy;
-  final String lat;
-  final String long;
+  final String  lat;
+  final String  long;
   //final String stockno;
 
   Asset({
@@ -19,14 +19,6 @@ class Asset {
     this.long,
   });
 
-  Asset.fromData(Map<String, dynamic> data)
-      : id = data['id'],
-        name = data['name'],
-        vid = data['vid'],
-        barcode = data['barcode'],
-        scannedBy = data['scannedBy'],
-        lat = data['lat'],
-        long = data['long'];
 
   Map<String, dynamic> toJson() {
     print('Asset json MAP running!');
