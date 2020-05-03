@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tabber/screens/home/barcodeScan.dart';
 import 'package:tabber/screens/home/locator.dart';
 import 'package:tabber/screens/home/search/viewHandler.dart';
 
@@ -7,6 +8,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Locator locator = new Locator();
+    Barcode bcScanner = new Barcode();
 
     return Scaffold(
       backgroundColor: Colors.grey[400],
@@ -62,9 +64,11 @@ class Home extends StatelessWidget {
                 fontFamily: 'Lato'
               ),
             ),
-            onPressed: () {
-              print('Scanning Barcode! *wink*');
-              locator.locationUpdate('456');
+            onPressed: () async {
+              print('Scanning barcode...');
+              String barcode = await bcScanner.scan();
+              print('This is what I scanned: $barcode');
+              locator.locationUpdate(barcode);
             },
           ),
           ),
