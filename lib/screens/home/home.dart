@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tabber/screens/home/search/searchForm.dart';
+import 'package:tabber/screens/home/search/viewHandler.dart';
 
 class Home extends StatelessWidget {
   @override
@@ -83,7 +83,7 @@ class Home extends StatelessWidget {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => SearchForm()),
+                MaterialPageRoute(builder: (context) => ViewHandler()),
               );
             },
           ),
