@@ -28,6 +28,7 @@ class _ViewHandlerState extends State<ViewHandler> {
         print('ASSET SEARCH RETURNED NULL!');
       } else {
         setState(() => asset = data);
+        print('Sendin yo asset...');
         toggleSeeking();
       }
     }

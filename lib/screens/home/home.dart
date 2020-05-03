@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:tabber/screens/home/locator.dart';
 import 'package:tabber/screens/home/search/viewHandler.dart';
 
 class Home extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
+    Locator locator = new Locator();
+
     return Scaffold(
       backgroundColor: Colors.grey[400],
       appBar: AppBar(
@@ -59,7 +63,8 @@ class Home extends StatelessWidget {
               ),
             ),
             onPressed: () {
-              print('Camera BC scan Activate!');
+              print('get location coords');
+              locator.locationUpdate('1234567');
             },
           ),
           ),
