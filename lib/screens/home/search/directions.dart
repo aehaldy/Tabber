@@ -59,8 +59,6 @@ class Directions extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print('\n-----I have an ASSET!---->');
-    print(asset.name);
     final String assetName = this.asset.name;
     final String assetVID = this.asset.vid;
     final String assetScanned = this.asset.scannedBy;

@@ -1,10 +1,10 @@
 import 'package:location/location.dart';
+import 'package:tabber/services/db.dart';
 
 class Locator {
-  //this "simply" runs a function to
-  // get user location
-  // and identify the asset by BC from DB
-  // and update its lat and long values
+
+  final DatabaseService _db = DatabaseService();
+
   Location location = new Location();
 
 
@@ -47,11 +47,11 @@ class Locator {
     await isPermissionGranted();
     print('And checking Permission granted again--->$_permissionGranted');
     if (_permissionGranted == PermissionStatus.granted) {
-      // PUT item by barcode with loc data
       await getLocationData();
-      print('....PUT by barcode $barcode......');
+      print('....PUT thru barcode $barcode......');
       print('Gotchyo loco!! ~~~~>> ${_locationData.latitude}');
-      }
+      await _db.updateAssetLoc(barcode, _locationData.latitude, _locationData.longitude);
+    }
   }
 
 }
