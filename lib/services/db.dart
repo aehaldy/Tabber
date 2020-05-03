@@ -82,7 +82,7 @@ class DatabaseService {
       return ('We got tabs on it!');
     } catch (err) {
       print('Error updating the Asset location -->');
-      print(err.message);
+      print(err.toString());
       return ('Failed to update. Check Barcode.');
     }
   }
