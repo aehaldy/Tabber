@@ -63,8 +63,8 @@ class Home extends StatelessWidget {
               ),
             ),
             onPressed: () {
-              print('get location coords');
-              locator.locationUpdate('1234567');
+              print('Scanning Barcode! *wink*');
+              locator.locationUpdate('456');
             },
           ),
           ),
