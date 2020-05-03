@@ -14,7 +14,7 @@ description: A simple large-asset tracking app.
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: ">=2.3.0 <3.0.0"
 
 dependencies:
   flutter:
@@ -57,7 +57,7 @@ flutter:
 
   assets:
     - assets/TabberLogo.png
-  #  - images/a_dot_ham.jpeg
+    - assets/mapBack.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
