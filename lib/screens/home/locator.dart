@@ -11,6 +11,7 @@ class Locator {
   bool _serviceEnabled;
   PermissionStatus _permissionGranted;
   LocationData _locationData;
+  String _snackMsg;
 
   Future isServiceEnabled () async {
     _serviceEnabled = await location.serviceEnabled();
@@ -25,7 +26,6 @@ class Locator {
 
   Future isPermissionGranted () async {
     _permissionGranted = await location.hasPermission();
-    print('What exactly IS permission status??--> $_permissionGranted');
     if (_permissionGranted == PermissionStatus.denied) {
       _permissionGranted = await location.requestPermission();
       if (_permissionGranted != PermissionStatus.granted) {
@@ -41,16 +41,18 @@ class Locator {
     return;
   }
 
+  String getSnackMsg () {
+    return _snackMsg;
+  }
+
 
   Future locationUpdate (String barcode) async {
     await isServiceEnabled();
     await isPermissionGranted();
-    print('And checking Permission granted again--->$_permissionGranted');
     if (_permissionGranted == PermissionStatus.granted) {
       await getLocationData();
-      print('....PUT thru barcode $barcode......');
-      print('Gotchyo loco!! ~~~~>> ${_locationData.latitude}');
-      await _db.updateAssetLoc(barcode, _locationData.latitude, _locationData.longitude);
+      String msg = await _db.updateAssetLoc(barcode, _locationData.latitude, _locationData.longitude);
+      _snackMsg = msg;
     }
   }
 

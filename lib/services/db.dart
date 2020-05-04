@@ -44,8 +44,8 @@ class DatabaseService {
       return;
     } catch (err) {
       print('Error getting the Asset data -->');
-      print(err.message);
-      return err.message;
+      print(err);
+      return err;
     }
   }
 
@@ -61,7 +61,7 @@ class DatabaseService {
         _assetThatMoved = docList[0];
         return;
       } else {
-        return null;
+        _assetThatMoved = null;
       }
     } catch (err) {
       print('Error getting the Asset data -->');
@@ -76,14 +76,15 @@ class DatabaseService {
     String strLong = long.toString();
     try {
       await getMovedAsset(barcode);
+      if (_assetThatMoved == null) return ('Failed to match barcode');
       DocumentSnapshot updatedAsset = _updateLocation(_assetThatMoved, strLat, strLong);
       await assetCollection.document(updatedAsset.documentID)
         .updateData(updatedAsset.data);
-      return ('We got tabs on it!');
+      return ('Success!');
     } catch (err) {
       print('Error updating the Asset location -->');
       print(err.toString());
-      return ('Failed to update. Check Barcode.');
+      return ('Failed to match barcode');
     }
   }
 
