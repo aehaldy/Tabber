@@ -17,6 +17,7 @@ class Home extends StatelessWidget {
         elevation: 0.0,
         title: Text(
           'Keep tabs on it.',
+          textAlign: TextAlign.center,
           style: TextStyle(
               color: Colors.grey[700],
               fontSize: 28,
@@ -25,7 +26,6 @@ class Home extends StatelessWidget {
         ),
       ),
       body: Column(
-        //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
           Container(
             constraints: BoxConstraints.expand(
@@ -51,26 +51,32 @@ class Home extends StatelessWidget {
           SizedBox(
             height: 70,
             width: 180,
-            child: RaisedButton(
-            color: Colors.orange,
-            splashColor: Colors.orangeAccent,
-            shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(28.0),
-            ),
-            child: Text('Scan',
-              style: TextStyle(
-                color: Colors.grey[50],
-                fontSize: 32,
-                fontFamily: 'Lato'
+            child: Builder(
+              builder: (context) => RaisedButton(
+                color: Colors.orange,
+                splashColor: Colors.orangeAccent,
+                shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(28.0),
+                ),
+                child: Text('Scan',
+                  style: TextStyle(
+                    color: Colors.grey[50],
+                    fontSize: 32,
+                    fontFamily: 'Lato'
+                  ),
+                ),
+                onPressed: () async {
+                  String barcode = await bcScanner.scan();
+                  await locator.locationUpdate(barcode);
+                  String result = locator.getSnackMsg();
+                  Scaffold.of(context).showSnackBar(SnackBar(
+                    backgroundColor: Colors.orange[600],
+                    content: Text(result),
+                    duration: Duration(seconds: 4),
+                  ));
+                },
               ),
             ),
-            onPressed: () async {
-              print('Scanning barcode...');
-              String barcode = await bcScanner.scan();
-              print('This is what I scanned: $barcode');
-              locator.locationUpdate(barcode);
-            },
-          ),
           ),
           Spacer(),
           SizedBox(
