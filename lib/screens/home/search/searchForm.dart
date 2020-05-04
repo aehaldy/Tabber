@@ -50,15 +50,29 @@ class _SearchFormState extends State<SearchForm> {
             child: Form(
               key: _formKey,
               child: TextFormField(
+                cursorColor: Colors.orangeAccent,
+
                 validator: (val) {
                   if (val.isNotEmpty && val.length == 7) {
                     return null;
                   } return 'Seven-digit code required';
                 },
+                decoration: new InputDecoration(
+                  //labelText: "Enter password",
+                  enabledBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey),
+                  ) ,
+                  focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.orangeAccent,
+                  ),
+                ),
+                ),
                 keyboardType: TextInputType.number,
                 style: TextStyle(
                   fontFamily: 'OpenSans',
-                  fontSize: 32
+                  fontSize: 32,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.grey[50],
                 ),
                 textAlign: TextAlign.center,
                 onChanged: (val) {
