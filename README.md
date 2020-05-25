@@ -1,4 +1,4 @@
-# tabber
+# Tabber
 
 Keep tabs on it:
 A simple large-asset tracking app.
