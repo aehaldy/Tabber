@@ -1,7 +1,7 @@
 # Tabber
 
 Keep tabs on it:
-A simple large-asset tracking app.
+A simple large-asset tracking app that updates location data using a camera scanner. It's easy to use and saves employees hours of work every week.
 
 ## Getting Started
 
